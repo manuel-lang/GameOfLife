@@ -1,14 +1,18 @@
 extends layout
 
 block content
-  h1= title
+  nav.navbar.navbar-expand-lg.navbar-light.bg-light
+    a.navbar-brand(href='#') ThisGame.Rocks
+    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
   p Welcome to #{title} our page!
   .container
     .row
+    for char in characters
      .col-sm
-       | One of three columnaöslkdjföalsdjföasjföasjöasjdölaskjfölasjföasj dföasj föalskdj föaskjdf öaskldjf öajöasdkjflsaölskjdöaksjdf sdkjföalskjf aösdn öaköj falksjdf öklöasjd fölkjdö lkajs
-     .col-sm
-       | One of three columns
-     .col-sm
-       | One of three columns
-
+        .card(style='width: 18rem;')
+          img.card-img-top(src=char.image_source, alt='XXXXXXX')
+          .card-body
+            h5.card-title char.name
+            p.card-text
+                | char.description
+            a.btn.btn-primary(href='#') Use this Character
