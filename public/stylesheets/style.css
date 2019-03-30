@@ -193,3 +193,17 @@ a {
 .carousel-indicators .active {
     background-color: #444;
 }
+@media (min-width: 500px) {
+    .mlp-carousel {
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+
+    }
+}
+
+@media (min-width: 1000px) {
+    .mlp-carousel {
+       margin-left: 18% !important;
+        margin-right: 18% !important;
+    }
+}
