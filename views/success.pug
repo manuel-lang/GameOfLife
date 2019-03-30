@@ -1,8 +1,8 @@
 extends layout
 
 block content
-    // include header
+    link(rel='stylesheet', href='/stylesheets/success.css')
     div.success
-        .container-fluid
-            .row
-                .div-md-12
+        | Your balance is #{balance}
+    h1
+        | You rock!

@@ -1,0 +1,6 @@
+body {
+    background-image: url("/img/okay.png") !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.5;
+}
