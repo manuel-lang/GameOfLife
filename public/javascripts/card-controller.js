@@ -14,8 +14,8 @@ function showModal () {
 
 var bar;
 var barState = 0.1;
-
 var questions;
+
 $.get('/questions', function(data) {
   console.log(data);
   questions = data;
@@ -72,10 +72,13 @@ $(document).ready(function() {
   };
 
   function release() {
+    var decision = "undefined";
     if (pullDeltaX >= decisionVal) {
       $card.addClass("to-right");
+      decision = "yes";
     } else if (pullDeltaX <= -decisionVal) {
       $card.addClass("to-left");
+      decision = "no";
     }
 
     if (Math.abs(pullDeltaX) >= decisionVal) {
@@ -85,7 +88,7 @@ $(document).ready(function() {
         $card.addClass("below").removeClass("inactive to-left to-right");
         cardsCounter++;
         increaseProgressbar();
-        simulateNextYear();
+        simulateNextYear(decision);
 
         if (cardsCounter === numOfCards) {
           window.location.replace( "/final/" + Math.round(moneyInTheWealth + moneyInTheBank));
@@ -147,10 +150,19 @@ var moneyInTheBank = START_INCOME;
 var moneyInTheWealth = START_CAPITAL;
 var simulationYear = 0;
 
-function simulateNextYear(oneTimeChangeBank, oneTimeChangeWealth) {
-  console.log("The year is " + simulationYear " + ahead your time");
+function simulateNextYear(decision) {
+  console.log("The year is " + simulationYear + " ahead your time");
+  if(decision === "yes") {
+    questions
+  }else if (decision === "no"){
+
+  }else {
+    console.err("Err: decision undefined");
+  }
 
   simulationYear++;
+
+
   if(simulationYear % INCREASE_EVERY_N_YEARS === 0) {
     netIncome *= SALARY_INCREASE;
   }
@@ -158,4 +170,8 @@ function simulateNextYear(oneTimeChangeBank, oneTimeChangeWealth) {
   moneyInTheBank += oneTimeChangeBank;
   moneyInTheWealth += oneTimeChangeWealth;
   updateBalance(moneyInTheBank);
+}
+
+function setModal (message) {
+  // TODO blablabla
 }
