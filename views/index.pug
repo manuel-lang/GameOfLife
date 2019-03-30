@@ -1,9 +1,7 @@
 extends layout
 
 block content
-    nav.navbar.navbar-expand-lg.navbar-light.bg-light
-        a.navbar-brand(href='#') ThisGame.Rocks
-        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+    include header
     .my-lg-5
     .container-fluid
         .row
@@ -21,21 +19,20 @@ block content
                                     .card
                                         img.card-img-top(src="/img/" + (index) + ".png", alt='XXXXXXX')
                                         .card-body
-                                            h5.card-title #{char.name}
-                                            p.card-text
+                                            h5.card-title.text-center #{char.name}
+                                            p.card-text.text-center
                                                 | #{char.description}
-                                            a.btn.btn-primary.align-self-end(href='/game/' + (index + 1)) Use Me
+                                            a.btn.btn-primary.align-self-end.button-center(href='/game/' + (index + 1)) Use Me
                         else
                             .carousel-item
                                 .col-xl-12.d-flex.align-items-stretch
                                     .card
                                         img.card-img-top(src="/img/" + (index) + ".png", alt='XXXXXXX')
                                         .card-body
-                                            h5.card-title #{char.name}
-                                            p.card-text
+                                            h5.card-title.text-center #{char.name}
+                                            p.card-text.text-center
                                                 | #{char.description}
-                                            a.btn.btn-primary.align-self-end(href='/game/' + (index + 1)) Use Me
-
+                                            a.btn.btn-primary.align-self-end.button-center(href='/game/' + (index + 1)) Use Me
                     a.carousel-control-prev(href='#carouselExampleControls', role='button', data-slide='prev')
                         span.carousel-control-prev-icon(aria-hidden='true')
                         span.sr-only Previous
