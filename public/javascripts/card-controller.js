@@ -15,7 +15,14 @@ function showModal () {
 var bar;
 var barState = 0.1;
 
+var questions;
+$.get('/questions', function(data) {
+  console.log(data);
+  questions = data;
+});
+
 $(document).ready(function() {
+
   $(".mozgradient").css("background", "");
   updateBalance(2000);
   bar = new ProgressBar.Line('#progressbar', {
@@ -28,12 +35,7 @@ $(document).ready(function() {
     svgStyle: {width: '100%', height: '100%'},
     text: {
       style: {
-        // Text color.
-        // Default: same as stroke color (options.color)
         color: '#999',
-        // position: 'absolute',
-        // right: '0',
-        // top: '30px',
         padding: 0,
         margin: 0,
         transform: null
@@ -83,10 +85,10 @@ $(document).ready(function() {
         $card.addClass("below").removeClass("inactive to-left to-right");
         cardsCounter++;
         increaseProgressbar();
-        simulateNextYear(1000,1000);
+        simulateNextYear();
 
         if (cardsCounter === numOfCards) {
-          window.location.replace( "/final/" + (moneyInTheWealth + moneyInTheBank)); // TODO Modify here
+          window.location.replace( "/final/" + Math.round(moneyInTheWealth + moneyInTheBank));
           cardsCounter = 0;
           $(".demo__card").removeClass("below");
         }
@@ -146,11 +148,14 @@ var moneyInTheWealth = START_CAPITAL;
 var simulationYear = 0;
 
 function simulateNextYear(oneTimeChangeBank, oneTimeChangeWealth) {
+  console.log("The year is " + simulationYear " + ahead your time");
+
   simulationYear++;
   if(simulationYear % INCREASE_EVERY_N_YEARS === 0) {
     netIncome *= SALARY_INCREASE;
   }
-  moneyInTheWealth *= 1.04;
+  moneyInTheWealth *= WEALTH_INTEREST;
   moneyInTheBank += oneTimeChangeBank;
   moneyInTheWealth += oneTimeChangeWealth;
+  updateBalance(moneyInTheBank);
 }
