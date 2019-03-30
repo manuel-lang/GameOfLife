@@ -64,10 +64,7 @@ $(document).ready(function() {
     $cardLike.css("opacity", likeOpacity);
   };
 
-
-
   function release() {
-
     if (pullDeltaX >= decisionVal) {
       $card.addClass("to-right");
     } else if (pullDeltaX <= -decisionVal) {
