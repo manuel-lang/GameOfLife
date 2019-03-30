@@ -2,7 +2,8 @@ function updateBalance(balance) {
   $(".coin-balance").html(" " + balance);
 }
 function increaseProgressbar() {
-  if(barState <= 1) {
+  if(barState < 0.95) { // Possible loss of precision
+    console.log(barState);
     barState += 0.1;
     bar.animate(barState);
   }
@@ -45,7 +46,7 @@ $(document).ready(function() {
 
   var animating = false;
   var cardsCounter = 0;
-  var numOfCards = 4; // Assuming that there are always 10 questions
+  var numOfCards = 10; // Assuming that there are always 10 questions
   var decisionVal = 80;
   var pullDeltaX = 0;
   var deg = 0;
@@ -79,9 +80,10 @@ $(document).ready(function() {
       setTimeout(function() {
         $card.addClass("below").removeClass("inactive to-left to-right");
         cardsCounter++;
+        increaseProgressbar();
         if (cardsCounter === numOfCards) {
           alert("Finished");
-          window.location.replace( "http://www.google.de"); // TODO Modify here
+          window.location.replace( "/final"); // TODO Modify here
           cardsCounter = 0;
           $(".demo__card").removeClass("below");
         }
