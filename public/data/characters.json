@@ -1,0 +1,22 @@
+[
+  {
+    "name" : "Ave",
+    "image_source" : "https://www.avert.org/sites/default/files/styles/article_scale_style_780/public/PLHIV%20Young%20person%20female_0.jpg?itok=5LjeRm4q&timestamp=1529415642",
+    "description" : "Ave is a young professional. She is 19 years old and wants to make the world a better place. With the age of 17 she founded her first startup with the mission to reduce plastics."
+  },
+  {
+    "name" : "Bert",
+    "image_source" : "https://www.health-opportunities.org.uk/wp-content/uploads/2016/12/young-man-hood-red-hair.jpg",
+    "description" : "Bert is a explorer. He is 18 years old, already has been to five continents and wants to see as much from the world as possible."
+  },
+  {
+    "name" : "Conny",
+    "image_source" : "https://www.clicsargent.org.uk/wp-content/uploads/2018/09/Daisy-Aug2018-770x433-Teensyoungadults-752x433.jpg",
+    "description" : "Conny wants to have a happy family. She is 22 years old and single mother of Claire (3 years old) and Damian (2 years old). Thus she wants to earn enough money to finance the livings for her family, but meanwhile spend time with her children."
+  },
+  {
+    "name" : "Dave",
+    "image_source" : "http://www.copmi.net.au/images/Kids-Teens/teen-boy.jpg",
+    "description" : "Dave wants to be a successful entrepreneur. He is 21 years old and studying business administration. He spends his free time with network on various case competitions all over the planet."
+  }
+]
