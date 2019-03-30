@@ -14,4 +14,17 @@ router.get('/game/:character_id', function(req, res, next) {
   res.render('game', { questions: questions });
 });
 
+router.get('/final/:balance', function(req, res, next) {
+  let balance = req.params.balance;
+  if (balance > 1000000) {
+    res.render('final', { balance: balance, img_src: "/img/success.png" });
+  }
+  else if(balance > 1000000) {
+    res.render('final', { balance: balance, img_src: '/img/okay.png' });
+  }
+  else {
+    res.render('final', { balance: balance, img_src: '/img/poor.png' });
+  }
+});
+
 module.exports = router;
