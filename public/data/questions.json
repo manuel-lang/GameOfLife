@@ -1,18 +1,97 @@
 [
   {
-    "questions" : "Do you like beer?",
-    "answers" : ["yes", "no"]
+    "questions" : "You went to buy a smoothie and became the millionth visitor. Now you have 1000 euro monetary prize from the smoothie bar. Should you spend this money on buying a small puppy you have been dreaming of all your life (otherwise the money stay in your depository)?\n",
+    "yes_response":["Cookie the Puppy is now a new family member! He will love you forever and eat your furniture from time to time. Great purchase, or is it? (you now have a puppy)"],
+    "no_response": ["A penny saved is a penny earned! (you now have more money in the depository)"],
+    "money_balance": [
+      [{"yearly_change_bank":  0, "one_time_change_bank" :  0, "yearly_wealth_change":  0, "one_time_wealth_change" : 0}],
+      [{"yearly_change_bank":  0, "one_time_change_bank" :  1000, "yearly_wealth_change":  0, "one_time_wealth_change" : 0}]]
   },
   {
-    "questions" : "Do you like chocolate?",
-    "answers" : ["yes", "no"]
+    "questions" : "Your neighbour declared himself an artist, and has collection of bean cans was acquired by the Museum of Modern Art! The neighbor has the second collection - plastic cans. Buy it for 1500 euro?\n",
+    "yes_response":["This collection was a real rubbish. (You just lost 1500 Euro)","With another 50% chance: He is now an art legend! Your collection is almost precious! (5000 capital gains)"],
+    "no_response": ["Maybe one day this collection will find its admirer"],
+    "money_balance": [
+      [{"yearly_change_bank":  0, "one_time_change_bank" :  -1500, "yearly_wealth_change":  0, "one_time_wealth_change" : 0},
+          {"yearly_change_bank":  0, "one_time_change_bank" :  -1500, "yearly_wealth_change":  0, "one_time_wealth_change" : 5000}],
+      [{"yearly_change_bank":  0, "one_time_change_bank" :  0, "yearly_wealth_change":  0, "one_time_wealth_change": 0}]
+    ]
   },
   {
-    "questions" : "Do you like football?",
-    "answers" : ["yes", "no"]
+    "questions" : "You are a real coffee fan and barista in the nearest coffee shop knows you by name. You have seen an advertisement of the new coffee machine (700 euro). Do you want to buy it?\n",
+    "yes_response": ["No coffee shops anymore! You make your own coffee and take it to office. ( You save 1200 euro a year for the coffee expenses)"],
+    "no_response": ["You continue buying coffee at your favourite place\n"],
+    "money_balance": [
+      [{"yearly_change_bank":  1200, "one_time_change_bank" :  -700, "yearly_wealth_change":  0, "one_time_wealth_change" :  0}]
+    ,[{"yearly_change_bank":  0, "one_time_change_bank" :  0, "yearly_wealth_change":  0, "one_time_wealth_change" :  0}]]
   },
   {
-    "questions" : "Do you like dancing?",
-    "answers" : ["yes", "no"]
+    "questions" : "While meditating in the woods you started thinking of your future. Maybe it is time to open the pension fund and annually put 2000 euro on the pension account?",
+    "yes_response":["Enlightenment was a gift from meditation. Now you will ensure you have enough savings. But have you chosen the best pension solution? Talk to MLP consultant to ensure the greater interest rate for your investments."],
+    "no_response": ["A path towards the enlightenment might me long. Yes, you have saved some money in the bank, but something inside you is getting concerned about your future every second of your life. Anyway, MLP will be here for you if you want to change your mind.\n"],
+    "money_balance": [
+      [{"yearly_change_bank":  -2000, "one_time_change_bank" :  0, "yearly_wealth_change":  2000, "one_time_wealth_change" : 0}],
+      [{"yearly_change_bank":  0, "one_time_change_bank" :  0, "yearly_wealth_change":  0, "one_time_wealth_change": 0}]
+    ]
+  },
+  {
+    "questions" : "Time for the vacation! You are going to the African safari. Do you want to buy extra insurance (-150 euro)?",
+    "yes_response": ["You enjoy the safe trip."],
+    "no_response": ["A wild giraffe attacked your car. You barely survived and spent half of the year in a hospital. Next time ask MLP consultant to select the right travel insurance option. (The recovery cost you 6000 euro). ", "A wild giraffe attacked your car. You are safe, but will you be so lucky next time? MLP will enlighten you about the importance of travel insurances and select the right choice."],
+    "money_balance": [
+      [{"yearly_change_bank":  0, "one_time_change_bank" :  -150, "yearly_wealth_change":  0, "one_time_wealth_change" : 0}],
+      [{"yearly_change_bank":  0, "one_time_change_bank" :  6000, "yearly_wealth_change":  0, "one_time_wealth_change": 0},
+        {"yearly_change_bank":  0, "one_time_change_bank" :  0, "yearly_wealth_change":  0, "one_time_wealth_change" : 0}
+      ]
+    ]
+  },
+  {
+    "questions" : "Your boss is really satisfied with your performance. This is why you get a bonus for the Eastern - 2000 euro. Will you add this money to the pension fund (otherwise just throw a nice party!)?",
+    "yes_response": ["Seems like you really care about your future, huh? (money added it to the pension fund)"],
+    "no_response": ["Party time! You spent great time with your friends."],
+    "money_balance": [
+      [{"yearly_change_bank":  0, "one_time_change_bank" :  0, "yearly_wealth_change":  2000, "one_time_wealth_change" : 0}],
+      [{"yearly_change_bank":  0, "one_time_change_bank" :  0, "yearly_wealth_change":  0, "one_time_wealth_change": 0}]
+    ]
+  },
+  {
+    "questions" : "A friend tells you about the new startup which produces robotic kittens. He offers you a 5% share for 5000 euro. Invest?",,,
+    "yes_response": ["Apparently customers love dogs more. The startup failed. Next time get a market insight from the experienced MLP professional, so your investments will not be spent in vain. (You lost all the money) ","This startup is the future. It has huge success worldwide. (You just gained twice as you have invested)"],
+    "no_response": ["You are allergic to robotic cats. Good decision. "],
+    "money_balance": [
+      [{"yearly_change_bank":  0, "one_time_change_bank" :  -5000, "yearly_wealth_change":  0, "one_time_wealth_change" : 0},
+        {"yearly_change_bank":  0, "one_time_change_bank" :  -5000, "yearly_wealth_change":  0, "one_time_wealth_change" : 10000}
+      ],
+      [{"yearly_change_bank":  0, "one_time_change_bank" :  0, "yearly_wealth_change":  0, "one_time_wealth_change": 0}]
+    ]
+  },
+  {
+    "questions" : "You found the love of your life and after a fabulous wedding ceremony (- 5000 euro) you are planning to move into a new house. Take the mortgage (or continue renting a flat)?",
+    "yes_response": ["Congratulations! You will have a wonderful place to live. But are you sure you have chosen the best mortgage quotes? MLP can help you to find the best option within a couple of hours. (The mortgage reduces your income for 18000 euro every year)"],
+    "no_response": ["You have rented a bigger flat for two. Not really cosy, but saving money is at the first place, huh? (You get noisy neighbors and a the annual rent expenses)"],
+    "money_balance": [
+      [{"yearly_change_bank":  -18000, "one_time_change_bank" :  -5000, "yearly_wealth_change":  0, "one_time_wealth_change" : 0}],
+      [{"yearly_change_bank":  -12000, "one_time_change_bank" :  -5000, "yearly_wealth_change":  0, "one_time_wealth_change": 0}]
+    ]
+  },
+  {
+    "questions" : "It is time to buy a car. The question is, are you eager to buy the expensive and fast car (-50000 euro) (otherwise you look for a cheapest solution)?",
+    "yes_response": ["Let all the neighbors hear the primal roar of your new polished luxurious car. (Now you own a sports car)"],
+    "no_response": ["Your friend sells you a second-hand car. Yes, it is a bit noisy and dirty, but you are happy that at least it can move. (You bought a second-hand car for 20000 euro)"],,,
+    "money_balance": [
+      [{"yearly_change_bank":  0, "one_time_change_bank" :  -70000, "yearly_wealth_change":  0, "one_time_wealth_change" : 0}],
+      [{"yearly_change_bank":  0, "one_time_change_bank" :  -20000, "yearly_wealth_change":  0, "one_time_wealth_change": 0}]
+    ]
+  },
+  {
+    "questions" : "How about the extra car insurance (700 euro a year)?",
+    "yes_response": ["After several hours of searching ad paperwork your car are finally insured. You wish you had someone who could make this process easier and find the best price on the insurance market. MLP consultants have years of experience to help you with all kinds of insurance, especially protecting your beloved vehicle"],
+    "no_response": ["You were ready for taking risk, because you were a lucky driver. Until the last evening. Your beloved vehicle lost the battle with the tree, and now the repairment will cost you 8000 euro. Maybe next time you will think of being more careful with your property. MLP consultants can guide you through insurance search and find the best solution.", "You were ready for taking risk, because you were a lucky driver. Until the last evening. Your beloved vehicle lost the battle with the tree, and now the repairment will cost you 8000 euro. Maybe next time you will think of being more careful with your property. MLP consultants can guide you through insurance search and find the best solution."],
+    "money_balance": [
+      [{"yearly_change_bank":  -700, "one_time_change_bank" :  0, "yearly_wealth_change":  0, "one_time_wealth_change" : 0}],
+      [{"yearly_change_bank":  0, "one_time_change_bank" :  -8000, "yearly_wealth_change":  0, "one_time_wealth_change": 0},
+        {"yearly_change_bank":  0, "one_time_change_bank" :  0, "yearly_wealth_change":  0, "one_time_wealth_change": 0}
+      ]
+    ]
   }
 ]

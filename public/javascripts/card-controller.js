@@ -8,10 +8,15 @@ function increaseProgressbar() {
     bar.animate(barState);
   }
 }
+function showModal () {
+  $('#myModal').modal('show')
+}
+
 var bar;
 var barState = 0.1;
 
 $(document).ready(function() {
+  $(".mozgradient").css("background", "");
   updateBalance(2000);
   bar = new ProgressBar.Line('#progressbar', {
     strokeWidth: 4,
