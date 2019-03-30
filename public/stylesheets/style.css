@@ -185,3 +185,11 @@ a {
     text-align: center;
     font-size: 2.2rem;
 }
+
+.carousel-indicators li {
+    background-color: #000000 !important;
+}
+
+.carousel-indicators .active {
+    background-color: #444;
+}
