@@ -1,4 +1,9 @@
+function updateBalance(balance) {
+  $(".coin-balance").text(" " + balance);
+}
+
 $(document).ready(function() {
+  updateBalance(2000);
 
   var animating = false;
   var cardsCounter = 0;
@@ -19,6 +24,8 @@ $(document).ready(function() {
     $cardReject.css("opacity", rejectOpacity);
     $cardLike.css("opacity", likeOpacity);
   };
+
+
 
   function release() {
 
