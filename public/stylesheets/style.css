@@ -1,7 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-    background-image: url("/img/07.jpg");
+    background-image: url("/img/09.jpg");
 }
 
 a {
@@ -34,8 +34,8 @@ a {
 }
 .demo__card-cont {
     position: relative;
-    width: 24rem;
-    height: 32rem;
+    width: 80%;
+    height: 80%;
     margin: 0 auto 5rem;
 }
 .demo__card {
@@ -108,7 +108,7 @@ a {
 }
 .demo__card__name {
     text-align: center;
-    font-size: 2rem;
+    font-size: 14px;
     font-weight: bold;
     color: #fff;
 }

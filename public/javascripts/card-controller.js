@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   var animating = false;
   var cardsCounter = 0;
-  var numOfCards = 6;
+  var numOfCards = 4; // Assuming that there are always 10 questions
   var decisionVal = 80;
   var pullDeltaX = 0;
   var deg = 0;
@@ -35,6 +35,8 @@ $(document).ready(function() {
         $card.addClass("below").removeClass("inactive to-left to-right");
         cardsCounter++;
         if (cardsCounter === numOfCards) {
+          alert("Finished");
+          window.location.replace( "http://www.google.de"); // TODO Modify here
           cardsCounter = 0;
           $(".demo__card").removeClass("below");
         }
