@@ -197,7 +197,6 @@ a {
     .mlp-carousel {
         margin-left: 0px !important;
         margin-right: 0px !important;
-
     }
 }
 
@@ -215,4 +214,11 @@ a {
 
 .coin-balance {
     color: gold;
+}
+.progressbar-text {
+    position: center !important;
+    right: 0px !important;
+    top: 0px; !important;
+    padding: 0px !important;
+    margin: 0px !important;
 }

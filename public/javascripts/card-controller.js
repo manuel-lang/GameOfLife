@@ -1,6 +1,5 @@
-
 function updateBalance(balance) {
-  $(".coin-balance").text(" "  + balance);
+  $(".coin-balance").html(" " + balance);
 }
 function increaseProgressbar() {
   if(barState <= 1) {
@@ -26,9 +25,9 @@ $(document).ready(function() {
         // Text color.
         // Default: same as stroke color (options.color)
         color: '#999',
-        position: 'absolute',
-        right: '0',
-        top: '30px',
+        // position: 'absolute',
+        // right: '0',
+        // top: '30px',
         padding: 0,
         margin: 0,
         transform: null
