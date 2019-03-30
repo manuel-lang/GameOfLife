@@ -222,3 +222,18 @@ a {
     padding: 0px !important;
     margin: 0px !important;
 }
+
+.success {
+    background-image: url("/img/success.png");
+    width: 100%;
+}
+
+.okay {
+    background-image: url("/img/okay.png");
+    width: 100%;
+}
+
+.poor {
+    background-image: url("/img/poor.png") !important;
+    width: 100%;
+}
