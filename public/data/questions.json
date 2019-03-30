@@ -1,22 +1,18 @@
 [
   {
     "questions" : "Do you like beer?",
-    "answers" : ["yes", "no"],
-    "character" : 1
+    "answers" : ["yes", "no"]
   },
   {
     "questions" : "Do you like chocolate?",
-    "answers" : ["yes", "no"],
-    "character" : 2
+    "answers" : ["yes", "no"]
   },
   {
     "questions" : "Do you like football?",
-    "answers" : ["yes", "no"],
-    "character" : 3
+    "answers" : ["yes", "no"]
   },
   {
     "questions" : "Do you like dancing?",
-    "answers" : ["yes", "no"],
-    "character" : 4
+    "answers" : ["yes", "no"]
   }
 ]

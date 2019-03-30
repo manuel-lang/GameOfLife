@@ -11,8 +11,7 @@ router.get('/', function(req, res, next) {
 router.get('/game/:character_id', function(req, res, next) {
   var content = fs.readFileSync("public/data/questions.json");
   var questions = JSON.parse(content);
-  var q = _.where(questions, {character: req.params.character_id});
-  res.render('game', { questions: q });
+  res.render('game', { questions: questions });
 });
 
 module.exports = router;

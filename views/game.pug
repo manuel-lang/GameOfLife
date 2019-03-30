@@ -1,1 +1,11 @@
 extends layout
+
+block content
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+        a.navbar-brand(href='#') ThisGame.Rocks
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+    .demo__content
+        .demo__card-cont
+            for question in questions
+              include card
+              h1 Test

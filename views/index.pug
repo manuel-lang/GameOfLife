@@ -4,15 +4,15 @@ block content
   nav.navbar.navbar-expand-lg.navbar-light.bg-light
     a.navbar-brand(href='#') ThisGame.Rocks
     button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
-  p Welcome to #{title} our page!
-  .container
+  .my-lg-5
+  .container-fluid
     .row
-    for char in characters
-     .col-sm
-        .card(style='width: 18rem;')
-          img.card-img-top(src=char.image_source, alt='XXXXXXX')
-          .card-body
-            h5.card-title char.name
-            p.card-text
-                | char.description
-            a.btn.btn-primary(href='#') Use this Character
+        each char, index in characters
+             .col-sm-3.d-flex.align-items-stretch
+                .card(style='width: 100%; ')
+                  img.card-img-top(src="/img/" + (index) + "_cropped.png", alt='XXXXXXX')
+                  .card-body
+                    h5.card-title #{char.name}
+                    p.card-text
+                        | #{char.description}
+                    a.btn.btn-primary.align-self-end(href='/game/'+ (index + 1)) Use Me
