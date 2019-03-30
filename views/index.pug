@@ -1,18 +1,44 @@
 extends layout
 
 block content
-  nav.navbar.navbar-expand-lg.navbar-light.bg-primary
-    a.navbar-brand(href='#' ) MLP Life Experience
-    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
-  .my-lg-5
-  .container-fluid
-    .row
-        each char, index in characters
-             .col-sm-3.d-flex.align-items-stretch
-                .card(style='width: 100%; ')
-                  img.card-img-top(src="/img/" + (index) + "_cropped.png", alt='XXXXXXX')
-                  .card-body
-                    h5.card-title #{char.name}
-                    p.card-text
-                        | #{char.description}
-                    a.btn.btn-primary.align-self-end(href='/game/'+ (index + 1)) Use Me
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+        a.navbar-brand(href='#') ThisGame.Rocks
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+    .my-lg-5
+    .container-fluid
+        .row
+            #carouselExampleControls.carousel.slide(data-ride='carousel')
+                ol.carousel-indicators
+                    li.active(data-target='#carouselExampleControls', data-slide-to='0')
+                    li(data-target='#carouselExampleControls', data-slide-to='1')
+                    li(data-target='#carouselExampleControls', data-slide-to='2')
+                    li(data-target='#carouselExampleControls', data-slide-to='3')
+                .carousel-inner
+                    each char, index in characters
+                        if index === 0
+                            .carousel-item.active
+                                .col-xl-12.d-flex.align-items-stretch
+                                    .card
+                                        img.card-img-top(src="/img/" + (index) + ".png", alt='XXXXXXX')
+                                        .card-body
+                                            h5.card-title #{char.name}
+                                            p.card-text
+                                                | #{char.description}
+                                            a.btn.btn-primary.align-self-end(href='/game/' + (index + 1)) Use Me
+                        else
+                            .carousel-item
+                                .col-xl-12.d-flex.align-items-stretch
+                                    .card
+                                        img.card-img-top(src="/img/" + (index) + ".png", alt='XXXXXXX')
+                                        .card-body
+                                            h5.card-title #{char.name}
+                                            p.card-text
+                                                | #{char.description}
+                                            a.btn.btn-primary.align-self-end(href='/game/' + (index + 1)) Use Me
+
+                    a.carousel-control-prev(href='#carouselExampleControls', role='button', data-slide='prev')
+                        span.carousel-control-prev-icon(aria-hidden='true')
+                        span.sr-only Previous
+                    a.carousel-control-next(href='#carouselExampleControls', role='button', data-slide='next')
+                        span.carousel-control-next-icon(aria-hidden='true')
+                        span.sr-only Next
