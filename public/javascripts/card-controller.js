@@ -83,9 +83,10 @@ $(document).ready(function() {
         $card.addClass("below").removeClass("inactive to-left to-right");
         cardsCounter++;
         increaseProgressbar();
+        simulateNextYear(1000,1000);
+
         if (cardsCounter === numOfCards) {
-          alert("Finished");
-          window.location.replace( "/final"); // TODO Modify here
+          window.location.replace( "/final/" + (moneyInTheWealth + moneyInTheBank)); // TODO Modify here
           cardsCounter = 0;
           $(".demo__card").removeClass("below");
         }
@@ -128,3 +129,28 @@ $(document).ready(function() {
   });
 
 });
+
+/**
+ * START OF CALCULATION UNIT
+ */
+let SALARY_INCREASE = 1.4;
+let WEALTH_INTEREST = 1.04;
+let INCREASE_EVERY_N_YEARS = 4;
+let START_INCOME = 3600;
+let START_CAPITAL = 0;
+
+var netIncome = START_INCOME;
+
+var moneyInTheBank = START_INCOME;
+var moneyInTheWealth = START_CAPITAL;
+var simulationYear = 0;
+
+function simulateNextYear(oneTimeChangeBank, oneTimeChangeWealth) {
+  simulationYear++;
+  if(simulationYear % INCREASE_EVERY_N_YEARS === 0) {
+    netIncome *= SALARY_INCREASE;
+  }
+  moneyInTheWealth *= 1.04;
+  moneyInTheBank += oneTimeChangeBank;
+  moneyInTheWealth += oneTimeChangeWealth;
+}

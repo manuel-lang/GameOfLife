@@ -55,7 +55,7 @@
     ]
   },
   {
-    "questions" : "A friend tells you about the new startup which produces robotic kittens. He offers you a 5% share for 5000 euro. Invest?",,,
+    "questions" : "A friend tells you about the new startup which produces robotic kittens. He offers you a 5% share for 5000 euro. Invest?",
     "yes_response": ["Apparently customers love dogs more. The startup failed. Next time get a market insight from the experienced MLP professional, so your investments will not be spent in vain. (You lost all the money) ","This startup is the future. It has huge success worldwide. (You just gained twice as you have invested)"],
     "no_response": ["You are allergic to robotic cats. Good decision. "],
     "money_balance": [
@@ -77,7 +77,7 @@
   {
     "questions" : "It is time to buy a car. The question is, are you eager to buy the expensive and fast car (-50000 euro) (otherwise you look for a cheapest solution)?",
     "yes_response": ["Let all the neighbors hear the primal roar of your new polished luxurious car. (Now you own a sports car)"],
-    "no_response": ["Your friend sells you a second-hand car. Yes, it is a bit noisy and dirty, but you are happy that at least it can move. (You bought a second-hand car for 20000 euro)"],,,
+    "no_response": ["Your friend sells you a second-hand car. Yes, it is a bit noisy and dirty, but you are happy that at least it can move. (You bought a second-hand car for 20000 euro)"],
     "money_balance": [
       [{"yearly_change_bank":  0, "one_time_change_bank" :  -70000, "yearly_wealth_change":  0, "one_time_wealth_change" : 0}],
       [{"yearly_change_bank":  0, "one_time_change_bank" :  -20000, "yearly_wealth_change":  0, "one_time_wealth_change": 0}]
