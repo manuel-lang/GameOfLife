@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-image: url("/img/07.jpg");
 }
 
 a {
@@ -103,7 +104,6 @@ a {
     margin: 0 auto 1.5rem;
     border-radius: 50%;
     border: 0.5rem solid #ffffff;
-    background-image: url("https://i.imgur.com/udTln22.png");
     background-size: cover;
 }
 .demo__card__name {
