@@ -207,3 +207,12 @@ a {
         margin-right: 18% !important;
     }
 }
+
+#mlp-coin {
+    margin-top: 30px;
+    margin-bottom:15px;
+}
+
+.coin-balance {
+    color: gold;
+}
