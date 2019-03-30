@@ -3,4 +3,8 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 0.5;
+    color: whitesmoke;
+    text-shadow: 3px 2px black;
+    font-size: xx-large;
+    text-align: center;
 }
