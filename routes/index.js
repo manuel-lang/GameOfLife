@@ -17,13 +17,13 @@ router.get('/game/:character_id', function(req, res, next) {
 router.get('/final/:balance', function(req, res, next) {
   let balance = req.params.balance;
   if (balance > 1000000) {
-    res.render('final', { balance: balance, img_src: "/img/success.png" });
+    res.render('success', { balance: balance });
   }
   else if(balance > 1000000) {
-    res.render('final', { balance: balance, img_src: '/img/okay.png' });
+    res.render('okay', { balance: balance });
   }
   else {
-    res.render('final', { balance: balance, img_src: '/img/poor.png' });
+    res.render('poor', { balance: balance });
   }
 });
 
