@@ -2,6 +2,15 @@ extends layout
 
 block content
     include header
+     .row
+         .col-md-3
+           i.fas.fa-coins.coin-balance
+         .col-md-3
+         .col-md-3
+         .col-md-3
+             | Time spent:
+             | 2 years
+
     .demo__content
         .demo__card-cont
             for question in questions
