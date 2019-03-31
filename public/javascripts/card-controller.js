@@ -1,9 +1,12 @@
 function updateBalance(balance) {
-  $(".coin-balance").html(" " + balance + "€");
+  $(".coin-balance").html(" &nbsp;Bank: " + balance + "€");
 }
+function updateBill(balance) {
+    $(".bill-balance").html("&nbsp;Wealth: " + balance + "€");
+}
+
 function increaseProgressbar() {
   if(barState < 0.95) { // Possible loss of precision
-    console.log(barState);
     barState += 0.1;
     bar.animate(barState);
   }
@@ -20,19 +23,19 @@ var barState = 0.1;
 var questions;
 
 $.get('/questions', function(data) {
-  console.log(data);
   questions = data;
 });
 
 $(document).ready(function() {
 
   $(".mozgradient").css("background", "");
-  updateBalance(2000);
+  updateBalance(START_CAPITAL);
+  updateBill(START_INCOME);
   bar = new ProgressBar.Line('#progressbar', {
     strokeWidth: 4,
     easing: 'easeInOut',
     duration: 1400,
-    color: '#35647E',
+    color: '#FFEA82',
     trailColor: '#eee',
     trailWidth: 1,
     svgStyle: {width: '100%', height: '100%'},
@@ -145,7 +148,7 @@ let SALARY_INCREASE = 1.4;
 let WEALTH_INTEREST = 1.04;
 let INCREASE_EVERY_N_YEARS = 4;
 let START_INCOME = 3600;
-let START_CAPITAL = 0;
+let START_CAPITAL = 3000;
 
 var netIncome = START_INCOME;
 
@@ -175,7 +178,6 @@ function getNewValues(data, position, decisionIdx, decision) {
 function simulateNextYear(decision, data, position) {
   var randomResult, randomPositionIdx, oneTimeChangeBank, oneTimeChangeWealth;
   if(decision === "yes") {
-    console.log(data[position].yes_response.length);
     randomPositionIdx = Math.floor(Math.random()*data[position].yes_response.length);
     randomResult = data[position].yes_response[randomPositionIdx]; // I need the position for that
 
@@ -194,5 +196,6 @@ function simulateNextYear(decision, data, position) {
   moneyInTheWealth *= WEALTH_INTEREST;
   moneyInTheBank += changes.one_time_bank_changed + netIncome;
   moneyInTheWealth += changes.one_time_change_wealth;
-  updateBalance(moneyInTheBank);
+  updateBalance(Math.round(moneyInTheBank));
+  updateBill(Math.round(moneyInTheWealth));
 }

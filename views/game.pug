@@ -2,7 +2,12 @@ extends layout
 
 block content
     include header
-       i.fas.fa-2x.fa-coins.coin-balance.d-flex.justify-content-center#mlp-coin
+       .row
+        .col-md-6
+            i.fas.fa-2x.fa-coins.coin-balance.d-flex.justify-content-center#mlp-coin
+        .col-md-6
+            i.fas.fa-2x.fa-money-bill-wave.bill-balance.d-flex.justify-content-center#mlp-bill
+        .mt-0
        #progressbar
 
     .demo__content
@@ -12,6 +17,5 @@ block content
               - var question = question
     include modal
     script.
-        console.log("Test")
         document.body.style.background = "#D9E9F9";
         document.body.style.backgroundImage = "none";
