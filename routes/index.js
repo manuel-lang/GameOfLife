@@ -22,10 +22,10 @@ router.get('/game/:character_id', function(req, res, next) {
 
 router.get('/final/:balance', function(req, res, next) {
   let balance = req.params.balance;
-  if (balance >= 160000) {
+  if (balance >= 25000) {
     res.render('success', { balance: balance });
   }
-  else if(balance >= 80000) {
+  else if(balance >= 10000) {
     res.render('okay', { balance: balance });
   }
   else {
