@@ -33,12 +33,9 @@ a {
     -ms-user-select: none;
     user-select: none;
 }
-.demo__card-cont {
-    position: relative;
-    width: 80%;
-    height: 80%;
-    margin: 0 auto 5rem;
-}
+
+
+
 .demo__card {
     z-index: 2;
     position: absolute;
@@ -96,7 +93,7 @@ a {
     background: #AFB42B;
 }
 .demo__card__top.brown {
-    background: #795548;
+    background: #E89E40;
 }
 .demo__card__img {
     overflow: hidden;
@@ -214,7 +211,7 @@ a {
 }
 
 .coin-balance {
-    color: gold;
+    color: #E89E40;
 }
 .progressbar-text {
     position: center !important;
@@ -237,4 +234,39 @@ a {
 .poor {
     background-image: url("/img/poor.png") !important;
     width: 100%;
+}
+
+@media (max-width: 600px) {
+    .demo__card-cont {
+        position: relative;
+        width: 90%;
+        height: 90%;
+        margin: 0 auto 5rem;
+    }
+    .demo__card__name {
+        font-size: 12px !important;
+    }
+}
+@media (max-width: 1200px) {
+    .demo__card-cont {
+        position: relative;
+        width: 80%;
+        height: 80%;
+        margin: 0 auto 5rem;
+    }
+    .demo__card__name {
+        font-size: 15px !important;
+    }
+}
+@media (min-width: 1200px) {
+    .demo__card-cont {
+        position: relative;
+        width: 60%;
+        height: 60%;
+        margin: 0 auto 5rem;
+    }
+    .demo__card__name {
+        font-size: 28px !important;
+    }
+
 }
