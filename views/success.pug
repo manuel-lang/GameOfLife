@@ -3,10 +3,11 @@ extends layout
 block content
     link(rel='stylesheet', href='/stylesheets/success.css')
     link(rel='stylesheet', href='/stylesheets/fireworks.css')
+    script(src='/javascripts/contact.js')
     div.success
         | Your balance is #{balance}€
-    h1
-        | You rock!
+        h1
+            | You rock!
     div#canvas-container
     include modal
 
@@ -14,9 +15,15 @@ block content
         .row
             .col-md-4
             .col-md-4
-                i.fab.fa-2x.fa-facebook-f
-                i.fab.fa-2x.fa-instagram
-                i.fab.fa-2x.fa-snapchat-ghost
-                i.fas.fa-2x.fa-info
+                .row
+                    .col-md-3
+                        i.fab.fa-lg.fa-facebook-f
+                    .col-md-3
+                        i.fab.fa-lg.fa-instagram
+                    .col-md-3
+                        i.fab.fa-2x.fa-snapchat-ghost
+                    .col-md-3
+                        div(onclick='showProModal()')
+                            i.fas.fa-2x.fa-info
             .col-md-4
     script(src='/javascripts/fireworks.js')
