@@ -3,6 +3,8 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url("/img/09.jpg");
   overflow: hidden;
+  min-width:300px;        /* Suppose you want minimum width of 1000px */
+  width: auto !important;  /* Firefox will set width as auto */
 }
 
 a {
@@ -27,7 +29,7 @@ a {
     overflow: hidden;
     position: relative;
     height: 48rem;
-    padding-top: 4.5rem;
+    padding-top: 2.5rem;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -77,7 +79,7 @@ a {
     z-index: 1;
 }
 .demo__card__top {
-    height: 20.5rem;
+    height: 100%;
     padding-top: 4rem;
 }
 .demo__card__top.purple {
@@ -213,6 +215,7 @@ a {
     margin-bottom:15px;
 }
 
+
 #mlp-bill {
     margin-top: 30px;
     margin-bottom:15px;
@@ -232,6 +235,10 @@ a {
     padding: 0px !important;
     margin: 0px !important;
 }
+.progressbar-background {
+    background: #35647E !important;
+    background-color: #35647E !important;
+}
 
 .success {
     background-image: url("/img/success.png");
@@ -248,7 +255,7 @@ a {
     width: 100%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .demo__card-cont {
         position: relative;
         width: 90%;
@@ -256,7 +263,16 @@ a {
         margin: 0 auto 5rem;
     }
     .demo__card__name {
-        font-size: 12px !important;
+        font-size: 15px !important;
+    }
+    .coin-balance {
+         font-size:12px !important;
+     }
+    .bill-balance{
+         font-size:12px !important;
+     }
+    .mlp-mini-spacing {
+        height:30px;
     }
 }
 @media (max-width: 1200px) {
@@ -267,7 +283,14 @@ a {
         margin: 0 auto 5rem;
     }
     .demo__card__name {
-        font-size: 15px !important;
+        font-size: 13px !important;
+    }
+    .coin-balance {
+        font-size:22px !important;
+    }
+
+    .bill-balance{
+        font-size:22px !important;
     }
 }
 @media (min-width: 1200px) {
@@ -278,7 +301,13 @@ a {
         margin: 0 auto 5rem;
     }
     .demo__card__name {
-        font-size: 28px !important;
+        font-size: 22px !important;
+    }
+    .coin-balance {
+        font-size:25px !important;
+    }
+    .bill-balance{
+        font-size:25px !important;
     }
 
 }

@@ -27,7 +27,6 @@ $.get('/questions', function(data) {
 });
 
 $(document).ready(function() {
-
   $(".mozgradient").css("background", "");
   updateBalance(START_CAPITAL);
   updateBill(START_INCOME);
@@ -35,7 +34,7 @@ $(document).ready(function() {
     strokeWidth: 4,
     easing: 'easeInOut',
     duration: 1400,
-    color: '#FFEA82',
+    color: '#35647E',
     trailColor: '#eee',
     trailWidth: 1,
     svgStyle: {width: '100%', height: '100%'},
