@@ -8,8 +8,11 @@ function increaseProgressbar() {
     bar.animate(barState);
   }
 }
-function showModal () {
+function showModal (message, headline) {
+  $('#modalText').text(message);
+  $('#modalLabel').text(headline);
   $('#myModal').modal('show')
+
 }
 
 var bar;
@@ -160,7 +163,6 @@ var position = 9;
  * @returns {{yearly_bank_change: *, one_time_bank_changed: *, one_time_change_wealth: *, yearly_wealth_change: *}}
  */
 function getNewValues(data, position, decisionIdx, decision) {
-  console.log(data);
   return {
     "one_time_bank_changed" : data[position].money_balance[decision][decisionIdx].one_time_change_bank,
     "one_time_change_wealth" : data[position].money_balance[decision][decisionIdx].one_time_wealth_change,
@@ -184,10 +186,11 @@ function simulateNextYear(decision, data, position) {
     console.err("Err: decision undefined");
   }
   simulationYear++;
+  showModal(randomResult, decision.toUpperCase());
   netIncome = simulationYear % INCREASE_EVERY_N_YEARS === 0? netIncome*SALARY_INCREASE:netIncome;
 
   var changes = getNewValues(data,  position, randomPositionIdx, decision === "yes"?0:1);
-  console.log(changes);
+
   moneyInTheWealth *= WEALTH_INTEREST;
   moneyInTheBank += changes.one_time_bank_changed + netIncome;
   moneyInTheWealth += changes.one_time_change_wealth;
