@@ -2,9 +2,13 @@ extends layout
 
 block content
     include header
-       i.fas.fa-2x.fa-coins.coin-balance.d-flex.justify-content-center#mlp-coin
-       i.fas.fa-2x.fa-money-bill.d-flex.justify-content-center#mlp-bill
-        <i class="fas fa-money-bill"></i>
+       .row
+        .col-md-3
+            i.fas.fa-2x.fa-coins.coin-balance.d-flex.justify-content-center#mlp-coin
+        .col-md-3
+        .col-md-3
+            i.fas.fa-2x.fa-money-bill-wave.bill-balance.d-flex.justify-content-center#mlp-bill
+        .col-md-3
        #progressbar
 
     .demo__content

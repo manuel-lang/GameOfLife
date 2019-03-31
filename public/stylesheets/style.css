@@ -213,7 +213,16 @@ a {
     margin-bottom:15px;
 }
 
+#mlp-bill {
+    margin-top: 30px;
+    margin-bottom:15px;
+}
+
 .coin-balance {
+    color: gold;
+}
+
+.bill-balance {
     color: gold;
 }
 .progressbar-text {
@@ -237,4 +246,9 @@ a {
 .poor {
     background-image: url("/img/poor.png") !important;
     width: 100%;
+}
+
+i {
+    display: inline-block;
+    margin-right: 1em;
 }

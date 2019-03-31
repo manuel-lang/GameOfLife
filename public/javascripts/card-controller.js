@@ -1,5 +1,9 @@
 function updateBalance(balance) {
-  $(".coin-balance").html(" " + balance);
+  $(".coin-balance").html("&nbsp;" + balance);
+}
+
+function updateBill(balance) {
+  $(".bill-balance").html("&nbsp;" + balance);
 }
 function increaseProgressbar() {
   if(barState < 0.95) { // Possible loss of precision
@@ -28,6 +32,7 @@ $(document).ready(function() {
 
   $(".mozgradient").css("background", "");
   updateBalance(2000);
+  updateBill(2000);
   bar = new ProgressBar.Line('#progressbar', {
     strokeWidth: 4,
     easing: 'easeInOut',
