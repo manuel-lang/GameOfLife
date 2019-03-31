@@ -30,6 +30,7 @@ $(document).ready(function() {
   $(".mozgradient").css("background", "");
   updateBalance(START_CAPITAL);
   updateBill(START_INCOME);
+  showModal("Plan your finances by swiping left or right!", "Welcome");
   bar = new ProgressBar.Line('#progressbar', {
     strokeWidth: 4,
     easing: 'easeInOut',
