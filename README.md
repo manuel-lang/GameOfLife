@@ -7,7 +7,7 @@
 - Run application with `npm start`
 
 ## Play the game
-- You can either run the game locally our visit our [website](https://this-game.rocks)
+- You can either run the game locally or visit our [website](https://this-game.rocks)
 - Select one of four given characters
 
   <img src="https://i.imgur.com/i2vHXS0.png" width="450">
