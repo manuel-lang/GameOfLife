@@ -1,1 +1,1 @@
-# HackDaysMLP
+# GameOfLife
