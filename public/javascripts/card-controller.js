@@ -88,7 +88,7 @@ $(document).ready(function() {
         $card.addClass("below").removeClass("inactive to-left to-right");
         cardsCounter++;
         increaseProgressbar();
-        simulateNextYear(decision);
+        simulateNextYear(decision, questions, position--);
 
         if (cardsCounter === numOfCards) {
           window.location.replace( "/final/" + Math.round(moneyInTheWealth + moneyInTheBank));
@@ -149,29 +149,47 @@ var netIncome = START_INCOME;
 var moneyInTheBank = START_INCOME;
 var moneyInTheWealth = START_CAPITAL;
 var simulationYear = 0;
+var position = 9;
 
-function simulateNextYear(decision) {
-  console.log("The year is " + simulationYear + " ahead your time");
+/**
+ *
+ * @param data
+ * @param position
+ * @param decisionIdx
+ * @param decision int Value: 0: yes response, 1: no response
+ * @returns {{yearly_bank_change: *, one_time_bank_changed: *, one_time_change_wealth: *, yearly_wealth_change: *}}
+ */
+function getNewValues(data, position, decisionIdx, decision) {
+  console.log(data);
+  return {
+    "one_time_bank_changed" : data[position].money_balance[decision][decisionIdx].one_time_change_bank,
+    "one_time_change_wealth" : data[position].money_balance[decision][decisionIdx].one_time_wealth_change,
+    "yearly_bank_change" : data[position].money_balance[decision][decisionIdx].yearly_change_bank,
+    "yearly_wealth_change" : data[position].money_balance[decision][decisionIdx].yearly_wealth_change
+  }
+}
+
+
+function simulateNextYear(decision, data, position) {
+  var randomResult, randomPositionIdx, oneTimeChangeBank, oneTimeChangeWealth;
   if(decision === "yes") {
-    questions
-  }else if (decision === "no"){
+    console.log(data[position].yes_response.length);
+    randomPositionIdx = Math.floor(Math.random()*data[position].yes_response.length);
+    randomResult = data[position].yes_response[randomPositionIdx]; // I need the position for that
 
+  }else if (decision === "no"){
+    randomPositionIdx = Math.floor(Math.random()*data[position].no_response.length);
+    randomResult = data[position].no_response[randomPositionIdx];
   }else {
     console.err("Err: decision undefined");
   }
-
   simulationYear++;
+  netIncome = simulationYear % INCREASE_EVERY_N_YEARS === 0? netIncome*SALARY_INCREASE:netIncome;
 
-
-  if(simulationYear % INCREASE_EVERY_N_YEARS === 0) {
-    netIncome *= SALARY_INCREASE;
-  }
+  var changes = getNewValues(data,  position, randomPositionIdx, decision === "yes"?0:1);
+  console.log(changes);
   moneyInTheWealth *= WEALTH_INTEREST;
-  moneyInTheBank += oneTimeChangeBank;
-  moneyInTheWealth += oneTimeChangeWealth;
+  moneyInTheBank += changes.one_time_bank_changed + netIncome;
+  moneyInTheWealth += changes.one_time_change_wealth;
   updateBalance(moneyInTheBank);
-}
-
-function setModal (message) {
-  // TODO blablabla
 }
