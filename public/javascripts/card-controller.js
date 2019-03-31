@@ -156,6 +156,7 @@ var moneyInTheBank = START_INCOME;
 var moneyInTheWealth = START_CAPITAL;
 var simulationYear = 0;
 var position = 9;
+var yearlyWealthChange = 0;
 
 /**
  *
@@ -198,12 +199,18 @@ function simulateNextYear(decision, data, position) {
   });
 
   netIncome = simulationYear % INCREASE_EVERY_N_YEARS === 0? netIncome*SALARY_INCREASE:netIncome;
+  if(simulationYear % INCREASE_EVERY_N_YEARS === 0){
+    $.notify("You are getting promoted! Higher Salary!", {
+      type: "success"
+    });
+  }
 
   var changes = getNewValues(data,  position, randomPositionIdx, decision === "yes"?0:1);
 
   moneyInTheWealth *= WEALTH_INTEREST;
   moneyInTheBank += changes.one_time_bank_changed + netIncome;
-  moneyInTheWealth += changes.one_time_change_wealth;
+  yearlyWealthChange += changes.yearly_wealth_change;
+  moneyInTheWealth += changes.one_time_change_wealth + yearlyWealthChange;
   updateBalance(Math.round(moneyInTheBank));
   updateBill(Math.round(moneyInTheWealth));
 }
