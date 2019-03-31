@@ -10,12 +10,13 @@ router.get('/', function(req, res, next) {
 
 router.get('/questions', function(req, res, next) {
   var data = fs. readFileSync('public/data/questions.json');
-  res.json(JSON.parse(data));
+  var jsonData = JSON.parse(data);
+  res.json(jsonData.reverse());
 });
 
 router.get('/game/:character_id', function(req, res, next) {
   var content = fs.readFileSync("public/data/questions.json");
-  var questions = JSON.parse(content);
+  var questions = JSON.parse(content).reverse();
   res.render('game', { questions: questions });
 });
 

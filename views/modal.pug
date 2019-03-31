@@ -1,6 +1,6 @@
 #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
     .modal-dialog(role='document')
-        .modal-content
+        .modal-content(style="background-color: #d9d9d9")
             .modal-header
                 h5#modalLabel.modal-title.text-center
                 button.close(type='button', data-dismiss='modal', aria-label='Close')
@@ -8,4 +8,4 @@
             .modal-body#modalText
                 | Lorem ipsum dolor sit amet
             .modal-footer
-                button.btn.btn-secondary(style="background-color: #35647E" type='button', data-dismiss='modal') Next
+                button.btn.btn-secondary.button-center(style="background-color: #35647E" type='button', data-dismiss='modal') Next

@@ -93,7 +93,7 @@
     ]
   },
   {
-    "questions" : "How about the extra car insurance (700 euro a year)?",
+    "questions" : "How about the extra car insurance \n(700 euro a year)?",
     "icon" : "/img/icons/10.png",
     "yes_response": ["After several hours of searching ad paperwork your car are finally insured. You wish you had someone who could make this process easier and find the best price on the insurance market. MLP consultants have years of experience to help you with all kinds of insurance, especially protecting your beloved vehicle"],
     "no_response": ["You were ready for taking risk, because you were a lucky driver. Until the last evening. Your beloved vehicle lost the battle with the tree, and now the repairment will cost you 8000 euro. Maybe next time you will think of being more careful with your property. MLP consultants can guide you through insurance search and find the best solution.", "You were ready for taking risk, because you were a lucky driver. Until the last evening. Your beloved vehicle lost the battle with the tree, and now the repairment will cost you 8000 euro. Maybe next time you will think of being more careful with your property. MLP consultants can guide you through insurance search and find the best solution."],
