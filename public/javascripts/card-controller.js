@@ -8,10 +8,25 @@ function increaseProgressbar() {
     bar.animate(barState);
   }
 }
+function showModal (message, headline) {
+  $('#modalText').text(message);
+  $('#modalLabel').text(headline);
+  $('#myModal').modal('show')
+
+}
+
 var bar;
 var barState = 0.1;
+var questions;
+
+$.get('/questions', function(data) {
+  console.log(data);
+  questions = data;
+});
 
 $(document).ready(function() {
+
+  $(".mozgradient").css("background", "");
   updateBalance(2000);
   bar = new ProgressBar.Line('#progressbar', {
     strokeWidth: 4,
@@ -23,12 +38,7 @@ $(document).ready(function() {
     svgStyle: {width: '100%', height: '100%'},
     text: {
       style: {
-        // Text color.
-        // Default: same as stroke color (options.color)
         color: '#999',
-        // position: 'absolute',
-        // right: '0',
-        // top: '30px',
         padding: 0,
         margin: 0,
         transform: null
@@ -65,10 +75,13 @@ $(document).ready(function() {
   };
 
   function release() {
+    var decision = "undefined";
     if (pullDeltaX >= decisionVal) {
       $card.addClass("to-right");
+      decision = "yes";
     } else if (pullDeltaX <= -decisionVal) {
       $card.addClass("to-left");
+      decision = "no";
     }
 
     if (Math.abs(pullDeltaX) >= decisionVal) {
@@ -78,9 +91,10 @@ $(document).ready(function() {
         $card.addClass("below").removeClass("inactive to-left to-right");
         cardsCounter++;
         increaseProgressbar();
+        simulateNextYear(decision, questions, position--);
+
         if (cardsCounter === numOfCards) {
-          alert("Finished");
-          window.location.replace( "/final"); // TODO Modify here
+          window.location.replace( "/final/" + Math.round(moneyInTheWealth + moneyInTheBank));
           cardsCounter = 0;
           $(".demo__card").removeClass("below");
         }
@@ -123,3 +137,62 @@ $(document).ready(function() {
   });
 
 });
+
+/**
+ * START OF CALCULATION UNIT
+ */
+let SALARY_INCREASE = 1.4;
+let WEALTH_INTEREST = 1.04;
+let INCREASE_EVERY_N_YEARS = 4;
+let START_INCOME = 3600;
+let START_CAPITAL = 0;
+
+var netIncome = START_INCOME;
+
+var moneyInTheBank = START_INCOME;
+var moneyInTheWealth = START_CAPITAL;
+var simulationYear = 0;
+var position = 9;
+
+/**
+ *
+ * @param data
+ * @param position
+ * @param decisionIdx
+ * @param decision int Value: 0: yes response, 1: no response
+ * @returns {{yearly_bank_change: *, one_time_bank_changed: *, one_time_change_wealth: *, yearly_wealth_change: *}}
+ */
+function getNewValues(data, position, decisionIdx, decision) {
+  return {
+    "one_time_bank_changed" : data[position].money_balance[decision][decisionIdx].one_time_change_bank,
+    "one_time_change_wealth" : data[position].money_balance[decision][decisionIdx].one_time_wealth_change,
+    "yearly_bank_change" : data[position].money_balance[decision][decisionIdx].yearly_change_bank,
+    "yearly_wealth_change" : data[position].money_balance[decision][decisionIdx].yearly_wealth_change
+  }
+}
+
+
+function simulateNextYear(decision, data, position) {
+  var randomResult, randomPositionIdx, oneTimeChangeBank, oneTimeChangeWealth;
+  if(decision === "yes") {
+    console.log(data[position].yes_response.length);
+    randomPositionIdx = Math.floor(Math.random()*data[position].yes_response.length);
+    randomResult = data[position].yes_response[randomPositionIdx]; // I need the position for that
+
+  }else if (decision === "no"){
+    randomPositionIdx = Math.floor(Math.random()*data[position].no_response.length);
+    randomResult = data[position].no_response[randomPositionIdx];
+  }else {
+    console.err("Err: decision undefined");
+  }
+  simulationYear++;
+  showModal(randomResult, decision.toUpperCase());
+  netIncome = simulationYear % INCREASE_EVERY_N_YEARS === 0? netIncome*SALARY_INCREASE:netIncome;
+
+  var changes = getNewValues(data,  position, randomPositionIdx, decision === "yes"?0:1);
+
+  moneyInTheWealth *= WEALTH_INTEREST;
+  moneyInTheBank += changes.one_time_bank_changed + netIncome;
+  moneyInTheWealth += changes.one_time_change_wealth;
+  updateBalance(moneyInTheBank);
+}

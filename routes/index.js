@@ -8,6 +8,11 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'This Game Rocks!', characters : characters });
 });
 
+router.get('/questions', function(req, res, next) {
+  var data = fs. readFileSync('public/data/questions.json');
+  res.json(JSON.parse(data));
+});
+
 router.get('/game/:character_id', function(req, res, next) {
   var content = fs.readFileSync("public/data/questions.json");
   var questions = JSON.parse(content);

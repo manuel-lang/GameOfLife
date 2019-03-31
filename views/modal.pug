@@ -1,0 +1,11 @@
+#myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+    .modal-dialog(role='document')
+        .modal-content
+            .modal-header
+                h5#modalLabel.modal-title.text-center
+                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') &times;
+            .modal-body#modalText
+                | Lorem ipsum dolor sit amet
+            .modal-footer
+                button.btn.btn-secondary(type='button', data-dismiss='modal') Close
