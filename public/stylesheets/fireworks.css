@@ -3,12 +3,6 @@ html, body {
     padding: 0;
 }
 
-body {
-    background: #171717;
-    color: #999;
-    font: 100%/18px helvetica, arial, sans-serif;
-}
-
 a {
     color: #2fa1d6;
     font-weight: bold;
