@@ -187,7 +187,15 @@ function simulateNextYear(decision, data, position) {
     console.err("Err: decision undefined");
   }
   simulationYear++;
-  showModal(randomResult, decision.toUpperCase());
+  //showModal(randomResult, decision.toUpperCase());
+  $.notify({
+    // options
+    message: randomResult
+  },{
+    // settings
+    type: 'info'
+  });
+
   netIncome = simulationYear % INCREASE_EVERY_N_YEARS === 0? netIncome*SALARY_INCREASE:netIncome;
 
   var changes = getNewValues(data,  position, randomPositionIdx, decision === "yes"?0:1);

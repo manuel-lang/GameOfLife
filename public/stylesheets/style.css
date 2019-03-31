@@ -316,3 +316,7 @@ i {
     display: inline-block;
     margin-right: 1em;
 }
+
+#notifications {
+    max-width: 300px;
+}
