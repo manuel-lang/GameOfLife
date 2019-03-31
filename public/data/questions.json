@@ -88,7 +88,7 @@
     "yes_response": ["Let all the neighbors hear the primal roar of your new polished luxurious car. (Now you own a sports car)"],
     "no_response": ["Your friend sells you a second-hand car. Yes, it is a bit noisy and dirty, but you are happy that at least it can move. (You bought a second-hand car for 20000€)"],
     "money_balance": [
-      [{"yearly_change_bank":  0, "one_time_change_bank" :  -70000, "yearly_wealth_change":  0, "one_time_wealth_change" : 0}],
+      [{"yearly_change_bank":  0, "one_time_change_bank" :  -50000, "yearly_wealth_change":  0, "one_time_wealth_change" : 0}],
       [{"yearly_change_bank":  0, "one_time_change_bank" :  -20000, "yearly_wealth_change":  0, "one_time_wealth_change": 0}]
     ]
   },

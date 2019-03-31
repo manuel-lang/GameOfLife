@@ -28,9 +28,9 @@ $.get('/questions', function(data) {
 
 $(document).ready(function() {
   $(".mozgradient").css("background", "");
-  updateBalance(START_CAPITAL);
-  updateBill(START_INCOME);
-  showModal("Plan your finances by swiping left or right!", "Welcome");
+  updateBalance(START_INCOME);
+  updateBill(START_CAPITAL);
+  showModal("Plan your finances by swiping left or right! Of course you have some income every year :)", "Welcome");
   bar = new ProgressBar.Line('#progressbar', {
     strokeWidth: 4,
     easing: 'easeInOut',
@@ -144,11 +144,11 @@ $(document).ready(function() {
 /**
  * START OF CALCULATION UNIT
  */
-let SALARY_INCREASE = 1.4;
+let SALARY_INCREASE = 1.5;
 let WEALTH_INTEREST = 1.04;
 let INCREASE_EVERY_N_YEARS = 4;
-let START_INCOME = 3600;
-let START_CAPITAL = 3000;
+let START_INCOME = 4200;
+let START_CAPITAL = 0;
 
 var netIncome = START_INCOME;
 
